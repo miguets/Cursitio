@@ -1,0 +1,84 @@
+body{
+    background: gray;
+}
+.top_signature{
+    background-color: rgb(72, 71, 71);
+}
+.top_signature > img{
+    width: 100%;
+    height: 45vh;
+    padding-top: 10px;
+    padding-left: 250px;
+    padding-right: 250px;
+    background: rgb(72, 71, 71);
+}
+.top_signature > h3{
+    text-align: center;
+    color: white;
+    margin-top: 10px;
+    font-size: 2rem;
+}
+.user_type >p>a{
+    text-decoration: none;
+    color: white;
+}
+.user_type{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+    padding-left: 250px;
+    padding-right: 250px;
+}
+.top_signature> .user_type > p{
+    color: white;
+    font-size: 1.3rem;
+    margin: 10px;
+}
+.cmap{
+    display: flex;
+    color: white;
+    text-align: center;
+    flex-direction: column;
+    margin: 10px;
+    justify-content: space-evenly;
+    padding-left: 250px;
+    padding-right: 250px;
+}
+.signature{
+    display: flex;
+    justify-content: space-between;
+}
+.cmap > .signature a, .signature > p{
+    text-decoration: none;
+    color: white;
+    font-size: 1.6rem;
+    margin-top: 10px;
+
+}
+.signature >p{
+    text-decoration: underline;
+}
+
+.footer{
+    position: absolute;
+}
+main{
+    padding-bottom: 50px;
+}
+
+@media (max-width: 900px){
+    .top_signature > img{
+        padding: 0;
+    }
+    .user_type{
+        padding: 0;
+    }
+    .cmap{
+        padding: 0;
+    }
+    .footer{
+        position: relative;
+    }
+}

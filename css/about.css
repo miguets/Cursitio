@@ -1,0 +1,44 @@
+body{
+    background: gray !important;
+}
+main{
+    display: flex;
+    justify-content: center;
+}
+
+h2{
+    text-align: center;
+    font-size: 3rem;
+    color: white;
+}
+h3{
+    font-size: 2rem;
+    color: white;
+    margin-left: 10px;
+}
+article > p{
+    font-size: 1.6rem;
+    margin: 10px 10px 20px 30px;
+    color: white;
+}
+img{
+    max-width: 650px;
+    height: 450px;
+}
+aside{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 800px){
+    
+    img{
+        width: 50vh;
+        overflow: hidden;
+        text-align: center;
+    }
+    main{
+        display: block;
+    }
+}

@@ -1,0 +1,138 @@
+/* formatear documento */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header{
+    display: flex;
+    background: #005288;
+    align-items: center;
+    min-height: 85px;
+    padding: 5px 10%;
+    justify-content: space-between;
+    
+}
+/* logo esta definido para localizar el nombre pero se puede remplazar facilmente por figure */
+.logo{
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    color: white;
+    /* estas partes las podemos cambiar despues para mejorar la parte de la barra de navegacion */
+    font-size: 2rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
+}
+/* valores para la imagen */
+.logo>a>img{
+    height: 70px;
+    margin-right: 10px;
+    width: auto;
+    /* se pueden cambiar los segundos de la transicion para hacer más rapido el zoom */
+    transition: all 0.5s; 
+}
+/* es la parte de la transicion */
+.logo>a>img:hover{
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+/* nav-menu puede ser reemplazado por nav>ul pero  es para identificarlo mas rapido */
+.nav-menu{
+    list-style: none;
+}
+.nav-menu li{
+    display: inline-block;
+    padding: 0 20px;
+}
+.nav-menu li:hover{
+    transform: scale(1.3);
+}
+.nav-menu li a{
+    font-size: 1.4rem;
+    color: white;
+    text-decoration: none;
+}
+.nav-menu li a:hover{
+    color: rgb(161, 150, 0);
+
+}
+/* este es para editar el boton para ingresar  */
+nav .btn{
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: white;
+    padding: 9px 25px;
+    background: rgb(134, 134, 0);
+    border-radius: .5rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3 ease 0s;
+}
+
+.footer{
+    margin-top: 10px;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    background: #005288;
+    color: white;
+    padding: 15px 0;
+}
+
+/* En la parte de home para las tarjetas de las materias */
+.container-cards{
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.homecards{
+    flex: 49%; /* Esto hace que cada caja ocupe el 50% del ancho del contenedor */
+    height: 49vh; /* Esto hace que cada caja ocupe el 50% de la altura de la ventana */
+    box-sizing: border-box;
+    background: rgba(0, 0, 0.6);
+}
+.homecards>a>img{
+    width: 100%;
+    height: 100%;
+    opacity: 50%;
+}
+.homecards>a>img:hover{
+    opacity: 100%;
+}
+.homecards>h3{
+    position: relative;
+    color: white;
+    text-align: center;
+    top: -250px;
+    font-size: 1.7rem;
+}
+/* utilizar responsive design para la vista en pantallas de menor resolucion */
+@media (max-width: 800px){
+    header{
+        flex-direction: column;
+    }
+    .nav-menu li{
+        display: flex;
+        flex-direction: column;
+        padding-top: 1rem;
+    }
+    .nav-menu li a{
+        font-size: 2rem;
+        color: white;
+    }
+    .nav-menu li, nav .btn{
+        font-size: 1.5rem;
+        margin-top: .2rem;
+        padding-bottom: 15px;
+    }
+    .homecards{
+        flex: 100%;
+
+    }
+
+}

@@ -1,0 +1,55 @@
+cursitiop
+Cursitio123_
+
+
+nombre:id21767376_escuela
+id21767376_admin
+Admin123_
+
+
+CREATE DATABASE IF NOT EXISTS escuela_en_linea;
+USE escuela_en_linea;
+
+CREATE TABLE usuarios (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nickname VARCHAR(100) NOT NULL,
+    nombres VARCHAR(100) NOT NULL,
+    apellidos VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    password VARCHAR(100) NOT NULL,
+    tipo_usuario INT DEFAULT 0
+);
+
+CREATE TABLE cursos (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    materia VARCHAR(100) NOT NULL,
+    num_modulos INT NOT NULL,
+    profesor_id INT,
+    FOREIGN KEY (profesor_id) REFERENCES usuarios(id)
+);
+
+CREATE TABLE materias (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    titulo VARCHAR(100) NOT NULL,
+    contenido TEXT,
+    curso_id INT,
+    FOREIGN KEY (curso_id) REFERENCES cursos(id)
+);
+
+CREATE TABLE progreso_estudiante (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    estudiante_id INT,
+    curso_id INT,
+    leccion_actual INT,
+    estado INT,
+    calificacion INT,
+    FOREIGN KEY (estudiante_id) REFERENCES usuarios(id),
+    FOREIGN KEY (curso_id) REFERENCES cursos(id),
+    FOREIGN KEY (leccion_actual) REFERENCES materias(id)
+);
+
+
+CREATE TABLE roles (
+    id INT PRIMARY KEY,
+    tipo VARCHAR(100)
+);
